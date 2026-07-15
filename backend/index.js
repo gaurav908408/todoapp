@@ -1,15 +1,13 @@
-const express = require('express')
+import express from "express";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
+
+dotenv.config();
+
+connectDB();
 
 const app = express();
 
-const PORT =3000;
-
-  app.get("/", (req, res) => {
-  res.send("Welcome to Todo Backend 🚀");
+app.listen(5000, () => {
+  console.log("Server Running on Port 5000");
 });
-
-
-
-app.listen(PORT,()=>{
-    console.log("server running successfully");
-})
